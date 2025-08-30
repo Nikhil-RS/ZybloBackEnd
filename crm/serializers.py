@@ -33,7 +33,7 @@ class StaffSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Staff
-        fields = ['id', 'full_name', 'email', 'phone', 'skills', 'manager', 'manager_id']
+        fields = ['id', 'full_name', 'email', 'phone', 'skills', 'manager', 'manager_id','joined_on']
 
 class CustomerSerializer(serializers.ModelSerializer):
     # Optionally, if including assigned_manager field:
@@ -48,5 +48,6 @@ class CustomerSerializer(serializers.ModelSerializer):
             'date_of_birth',
             'phone',
             'email',
+            'added_on',
             # 'assigned_manager',
         )

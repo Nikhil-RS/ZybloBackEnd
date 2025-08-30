@@ -26,6 +26,7 @@ class Staff(models.Model):
     phone = models.CharField(max_length=20)
     skills = models.CharField(max_length=200)
     manager = models.ForeignKey(Manager, on_delete=models.SET_NULL, null=True, blank=True, related_name='staff_members')
+    joined_on = models.DateField(default=timezone.now)
 
     def __str__(self):
         return self.full_name
@@ -37,6 +38,7 @@ class Customer(models.Model):
     date_of_birth = models.DateField(null=True, blank=True)
     phone = models.CharField(max_length=20)
     email = models.EmailField()
+    added_on = models.DateField(default=timezone.now)
     # You can add a ForeignKey to Manager if needed
     # assigned_manager = models.ForeignKey(Manager, on_delete=models.SET_NULL, null=True, blank=True)
     
